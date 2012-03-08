@@ -13,3 +13,9 @@ project/plugins/project/
 .scala_dependencies
 .cache
 .classpath
+target/
+*.eml
+*.iml
+*.ipr
+*.iws
+.*.sw?
