@@ -4,15 +4,12 @@ import org.scalatra._
 import scalate.ScalateSupport
 
 class MyScalatraServlet extends ScalatraServlet with ScalateSupport {
-
+  
   get("/") {
-    <html>
-      <body>
-        <h1>Helsslo, world!</h1>
-        Say <a href="hello-scalate">hello to Scalate</a>.
-      </body>
-    </html>
-  }
+  contentType="text/html"
+
+  jade("/index")
+}
 
   notFound {
     // Try to render a ScalateTemplate if no route matched
