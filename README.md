@@ -11,3 +11,7 @@
 4. Learn more at http://www.scalatra.org/stable/book.
 
 5. Happy hacking!
+
+6. Run the following command to enable automatic code reloading. Woohoo!
+
+		~ ;copy-resources;aux-compile

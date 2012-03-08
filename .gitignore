@@ -1,12 +1,15 @@
-*~
-lib_managed/
-project/boot/
-project/build/target/
-project/plugins/project/build.properties
-src_managed/
+*.class
+*.classpath
+*.log
+
+# sbt specific
+dist/*
 target/
-*.eml
-*.iml
-*.ipr
-*.iws
-.*.sw?
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.cache
