@@ -12,6 +12,11 @@
 
 5. Happy hacking!
 
-6. Run the following command to enable automatic code reloading. Woohoo!
+6.Run the following command in sbt to generate eclipse project files so that eclipse wont complain when you open the project. The sbt eclipse plugin is included in the plugins.sbt.
+
+		eclipse 
+
+
+Run the following command to enable automatic code reloading. Woohoo!
 
 		~ ;copy-resources;aux-compile
