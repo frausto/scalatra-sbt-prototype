@@ -1,7 +1,7 @@
 1. Launch [SBT](http://code.google.com/p/simple-build-tool).
 
         ./sbt
-
+		
 2. Run Jetty
 
         container:start
@@ -17,6 +17,6 @@
 		eclipse 
 
 
-Run the following command to enable automatic code reloading. Woohoo!
+7. Run the following command to enable automatic code reloading. Woohoo!
 
 		~ ;copy-resources;aux-compile
