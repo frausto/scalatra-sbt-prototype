@@ -14,8 +14,7 @@
 
 6.Run the following command in sbt to generate eclipse project files so that eclipse wont complain when you open the project. The sbt eclipse plugin is included in the plugins.sbt.
 
-		eclipse 
-
+		eclipse
 
 7. Run the following command to enable automatic code reloading. Woohoo!
 
