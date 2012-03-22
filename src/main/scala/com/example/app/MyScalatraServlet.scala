@@ -5,11 +5,17 @@ import scalate.ScalateSupport
 
 class MyScalatraServlet extends ScalatraServlet with ScalateSupport {
   
+  before(){
+    contentType = "text/html"
+  }
+  
   get("/") {
-  contentType="text/html"
-
-  jade("/index")
-}
+    jade("/index")
+  }
+  
+  post("/new_user"){
+    "yo yo " + params("user")
+  }
 
   notFound {
     // Try to render a ScalateTemplate if no route matched
