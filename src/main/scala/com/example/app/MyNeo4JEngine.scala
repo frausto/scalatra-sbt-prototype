@@ -10,29 +10,9 @@ import org.neo4j.kernel.EmbeddedGraphDatabase
 
 class MyNeo4JEngine {
   val neo: GraphDatabaseService = new EmbeddedGraphDatabase("var/graphdb")
-  var first: Node = null
-  var second: Node = null
 
   implicit def string2relationshipType(x: String) = DynamicRelationshipType.withName(x)
 
-  def initializeDummyData() = {
-    var tx: Transaction = neo.beginTx()
-
-    try {
-      first = neo.getReferenceNode()
-      first.setProperty("name", "first")
-
-      second = neo.createNode()
-      second.setProperty("name", "second")
-
-      first.createRelationshipTo(second, "isRelatedTo")
-
-      tx.success()
-    } finally {
-      println("finished transaction 1")
-    }
-  }
-  
   def nodeCount() : Iterable[Node] ={
     neo.getAllNodes()
   }

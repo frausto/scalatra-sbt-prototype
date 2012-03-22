@@ -12,7 +12,6 @@ class MyNeo4JSpec extends Specification {
       var engine = new MyNeo4JEngine()
       var count = 0
       try {
-        engine.initializeDummyData()
         var nodes: Iterable[Node] = null
         nodes = engine.nodeCount()
         nodes.foreach(n => {
