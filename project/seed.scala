@@ -13,8 +13,10 @@ object SeedBuild extends Build {
   val hwsettings = Defaults.defaultSettings
   val seed = TaskKey[Unit]("seed", "Seeds Neo4J data")
   val unseed = TaskKey[Unit]("unseed", "Remove Neo4J data")
+  val reseed = TaskKey[Unit]("reseed", "Unseed and then seed Neo4J data")
 
   val seedTask = seed := {
+    println("Seeding Neo4J")
     val neo: GraphDatabaseService = new EmbeddedGraphDatabase("var/graphdb")
     var first: Node = null
     var second: Node = null
@@ -39,13 +41,18 @@ object SeedBuild extends Build {
   }
 
   val unseedTask = unseed := {
+    println("Unseeding Neo4J")
     var d: File = new File("var/graphdb")
     d.listFiles.foreach { f => f.delete }
     d.delete
   }
 
+  
+  // This doesn't actually reseed, just unseed.  Need to depend on both.
+  val reseedTask = reseed <<= unseed
+  
   lazy val project = Project(
     "project",
     file("."),
-    settings = hwsettings ++ Seq(seedTask, unseedTask))
+    settings = hwsettings ++ Seq(seedTask, unseedTask, reseedTask))
 }
